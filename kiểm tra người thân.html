@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Máy chọn người thân</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #ff6a00, #ee0979);
+      color: white;
+      text-align: center;
+      padding-top: 100px;
+    }
+    .box {
+      background-color: rgba(0,0,0,0.4);
+      padding: 30px;
+      border-radius: 15px;
+      width: 400px;
+      margin: auto;
+      box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    }
+    input, button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+    }
+    button {
+      background-color: #00ffff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00cccc;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>👨‍👩‍👧‍👦 Bạn có người thân không</h1>
+    <p>Nhập tên người thân của bạn để nhận 9999$(trust me bro)</p>
+    <input type="text" id="nameInput" placeholder="Ví dụ: Mẹ mày, bố mày.">
+    <button onclick="checkRelative()">Chọn</button>
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function checkRelative() {
+      const name = document.getElementById("nameInput").value.trim();
+      const result = document.getElementById("result");
+
+      if (name === "") {
+        result.textContent = "⚠️ Bạn chưa nhập tên ai cả!";
+        return;
+      }
+
+      result.textContent = `❌ Xin lỗi, người tên "${name}" đã được chọn rồi. Vui lòng chọn người khác 😏`;
+    }
+  </script>
+</body>
+</html>
